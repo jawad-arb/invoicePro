@@ -54,19 +54,27 @@ public class UserRepositoryImpl<T extends User> implements UserRepository<T> {
             // save Url in verification table
             jdbc.update(INSERT_ACCOUNT_VERIFICATION_URL_QUERY,Map.of("userId",user.getId(),"url",verificationUrl));
             // send email to user with verification URL
+//            emailService.sendVerificationUrl(user.getFirstName(),user.getEmail(),verificationUrl,ACCOUNT);
+//      if it was verification the password ==>
+//          emailService.sendVerificationUrl(user.getFirstName(),user.getEmail(),verificationUrl,Password);
             // return newly created user
+            return user;
             // if any errors , throw exceptions with proper message
 
         }
-        catch (EmptyResultDataAccessException emptyResultDataAccessExceptionxception){}
-        catch (Exception exception){}
+        catch (EmptyResultDataAccessException emptyResultDataAccessExceptionxception){
+            throw new ApiException("no Role found by name :"+ROLE_USER.name());
+        }
+        catch (Exception exception){
+            throw new ApiException("An Error occurred , please try again");
+        }
 
 
 
 
 
 
-        return null;
+
     }
 
 
