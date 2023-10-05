@@ -19,6 +19,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-crypto/6.1.4/spring-security-crypto-6.1.4-sources.jar!/org/springframework/security/crypto/bcrypt/BCryptPasswordEncoder.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/6.0.12/spring-jdbc-6.0.12-sources.jar!/org/springframework/jdbc/core/namedparam/SqlParameterSource.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -33,6 +34,10 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
@@ -41,11 +46,15 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.invoicepro.model" />
+      <recent name="com.example.invoicepro.services.implementation" />
       <recent name="com.example.invoicepro.repositories.implementation" />
     </key>
   </component>
@@ -68,11 +77,37 @@
       <option name="presentableId" value="Default" />
       <updated>1695985379516</updated>
       <workItem from="1695985380675" duration="557000" />
-      <workItem from="1696001796856" duration="1387000" />
+      <workItem from="1696001796856" duration="1927000" />
+      <workItem from="1696023916253" duration="10000" />
+      <workItem from="1696180229376" duration="3727000" />
+      <workItem from="1696187069370" duration="3424000" />
+      <workItem from="1696212781299" duration="115000" />
+      <workItem from="1696241057217" duration="1852000" />
+      <workItem from="1696248361691" duration="6935000" />
+      <workItem from="1696346806987" duration="840000" />
+      <workItem from="1696347662197" duration="28000" />
+      <workItem from="1696368402678" duration="2687000" />
+      <workItem from="1696439866019" duration="642000" />
+      <workItem from="1696452854696" duration="945000" />
+      <workItem from="1696453818379" duration="2399000" />
+      <workItem from="1696456302385" duration="10000" />
+      <workItem from="1696456391102" duration="541000" />
+      <workItem from="1696498399842" duration="460000" />
+      <workItem from="1696500029564" duration="327000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="com.example.invoicepro.exceptions.ApiException" package="com.example.invoicepro.exceptions" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

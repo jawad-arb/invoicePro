@@ -1,5 +1,6 @@
 package com.example.invoicepro.repositories.implementation;
 
+import com.example.invoicepro.dto.UserDTO;
 import com.example.invoicepro.exceptions.ApiException;
 import com.example.invoicepro.model.Role;
 import com.example.invoicepro.model.User;
@@ -7,7 +8,6 @@ import com.example.invoicepro.repositories.RoleRepository;
 import com.example.invoicepro.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
@@ -62,9 +62,6 @@ public class UserRepositoryImpl<T extends User> implements UserRepository<T> {
             // if any errors , throw exceptions with proper message
 
         }
-        catch (EmptyResultDataAccessException emptyResultDataAccessExceptionxception){
-            throw new ApiException("no Role found by name :"+ROLE_USER.name());
-        }
         catch (Exception exception){
             throw new ApiException("An Error occurred , please try again");
         }
@@ -86,9 +83,15 @@ public class UserRepositoryImpl<T extends User> implements UserRepository<T> {
     }
 
     @Override
-    public T get(Long id) {
-        return null;
+    public UserDTO get(Long id) {
+        // check if the user with id is in the DB else Throw exceptions
+        if(getUserById(id)==0) throw new ApiException("User with id : "+id+" not found");
+        // return the UserDto (User without password)
+        UserDTO user = jdbc.queryForObject(SELECT_USER_ID_QUERY,Map.of("id",id), UserDTO.class);
+        return user;
     }
+
+
 
     @Override
     public T update(T data) {
@@ -105,6 +108,10 @@ public class UserRepositoryImpl<T extends User> implements UserRepository<T> {
 
     private Integer getEmailCount(String email) {
         return jdbc.queryForObject(COUNT_USER_EMAIL_QUERY, Map.of("email",email),Integer.class);
+    }
+
+    private Integer getUserById(Long id) {
+        return jdbc.queryForObject(COUNT_USER_ID_QUERY,Map.of("id",id), Integer.class);
     }
 
     private SqlParameterSource getSqlParameterSource(T user) {
